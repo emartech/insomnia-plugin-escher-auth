@@ -19,8 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Determine Node version
         id: engines
-        run: |
-          echo "::set-output name=NODE_VERSION::$(jq -r '.engines.node' package.json)"
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
       - name: Use Node.js ${{ steps.engines.outputs.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
