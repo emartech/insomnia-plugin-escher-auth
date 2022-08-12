@@ -38,7 +38,7 @@ To use this plugin you need to configure the Escher keypool as environment varia
 - Then you'll be able to send requests to the configured hosts (presents in the keypool) and the plugin will add the Escher signed headers to the request automatically
 - If you want to send request without escher authentication simply change the environment to the `witout escher` one
 
-__Important__: The plugin finds the right escher key fom keypool based on the request's host, so you need to setup the keypool properly.
+__Important__: The plugin finds the right escher key fom keypool based on the request's host, so you need to setup the keypool properly
 
 ## Debugging
 - To open the debugger press CMD+ALT+I
