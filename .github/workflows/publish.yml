@@ -1,0 +1,43 @@
+name: Publish package
+
+on:
+  push:
+    branches: [ master ]
+    tags-ignore: '**'
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_PUBLISHER_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Determine Node version
+        id: engines
+        run: |
+          echo "::set-output name=NODE_VERSION::$(jq -r '.engines.node' package.json)"
+      - name: Use Node.js ${{ steps.engines.outputs.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.engines.outputs.NODE_VERSION }}
+      - name: Configure npm auth
+        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISHER_TOKEN }}
+      - name: Install dependencies
+        run: npm install
+      - name: Run code style check
+        run: npm run code-style
+      - name: Run tests
+        run: npm run test
+      - name: Run release
+        run: npm run release
+      - name: Slack notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+        if: always()
