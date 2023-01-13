@@ -7,6 +7,13 @@ An Insomnia plugin to sign the requests with [Escher](http://escherauth.io/) aut
 3. Enter insomnia-plugin-escher-auth 
 4. Click "Install Plugin"
 
+## Upgrade to newer plugin version
+1. Open Insomnia application
+2. Go to Application > Preferences > Plugins
+3. Enter insomnia-plugin-escher-auth
+4. Click "Install Plugin"
+5. Click "Reload Plugins"
+
 ## Configuration
 To use this plugin you need to configure the Escher keypool as environment variable
 1. Open the `Manage Environments` dialog (CMD + E)
