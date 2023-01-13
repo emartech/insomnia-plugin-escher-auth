@@ -50,8 +50,13 @@ const getProtocol = (context) => {
 
 const getPath = (context) => {
   const urlParts = getUrlParts(context);
+  const path = urlParts.pathname;
 
-  return urlParts.pathname;
+  if (urlParts.search) {
+    path.concat(urlParts.search);
+  }
+
+  return path;
 }
 
 function getTimestamp () {
