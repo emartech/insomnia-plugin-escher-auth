@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2022 SAP Emarsys
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 module.exports = {
   env: {
     browser: true,

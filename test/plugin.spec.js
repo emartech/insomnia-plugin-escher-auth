@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2022 SAP Emarsys
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 const chai = require('chai');
 const expect = chai.expect;
 const sinonChai = require('sinon-chai');

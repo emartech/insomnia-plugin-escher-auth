@@ -1,5 +1,26 @@
+<!--
+SPDX-FileCopyrightText: 2022 SAP Emarsys
+
+SPDX-License-Identifier: MIT
+-->
+
 # Escher authentication plugin for Insomnia
+
+## Description
 An Insomnia plugin to sign the requests with [Escher](http://escherauth.io/) authentication.
+
+## Requirements
+- [Insomnia](https://insomnia.rest/)
+
+## Contributing
+This package is only maintained by SAP Emarsys employees
+
+## Code of Conduct
+You can find the Code of Conduct document [here](./CODE_OF_CONDUCT.md).
+
+## Licensing
+You can find the License document [here](./LICENSES/MIT.txt).
+You can check the licencing with the [Reuse Tool](https://reuse.software/).
 
 ## Installation
 1. Open Insomnia application
@@ -55,3 +76,6 @@ __Important__: The plugin finds the right escher key fom keypool based on the re
 ## Known issues
 If you have `.npmrc` file in your home folder it can cause error during the plugin installation `An unexpected error occurred: "Failed to replace env in config: ${NPM_TOKEN}"`
 In this case just delete your `.npmrc` file to fix the installation process
+
+## How to obtain support
+If you found a bug or experienced strange behaviour, feel free to open an issue on the project's [GitHub Issues page](https://github.com/emartech/insomnia-plugin-escher-auth/issues).

@@ -1,3 +1,9 @@
+#
+# SPDX-FileCopyrightText: 2022 SAP Emarsys
+#
+# SPDX-License-Identifier: MIT
+#
+
 name: Publish package
 
 on:
@@ -28,6 +34,8 @@ jobs:
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISHER_TOKEN }}
       - name: Install dependencies
         run: npm install
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v1
       - name: Run code style check
         run: npm run code-style
       - name: Run tests
