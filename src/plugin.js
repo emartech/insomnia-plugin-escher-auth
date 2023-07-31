@@ -79,10 +79,10 @@ const findEscherConfigByHost = (context, host) => {
 
 const getEscherAuthHeaders = (escherConfig, escherOptions, body) => {
   const escher = new Escher({
-    algoPrefix: 'EMS',
-    vendorKey: 'EMS',
-    authHeaderName: 'X-Ems-Auth',
-    dateHeaderName: 'X-Ems-Date',
+    algoPrefix: escherConfig.algoPrefix ?? 'EMS',
+    vendorKey: escherConfig.vendorKey ?? 'EMS',
+    authHeaderName: escherConfig.authHeaderName ?? 'X-Ems-Auth',
+    dateHeaderName: escherConfig.dateHeaderName ?? 'X-Ems-Date',
     credentialScope: escherConfig.credentialScope,
     accessKeyId: escherConfig.key,
     apiSecret: escherConfig.secret,

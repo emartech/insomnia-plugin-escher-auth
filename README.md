@@ -47,13 +47,21 @@ To use this plugin you need to configure the Escher keypool as environment varia
         "host": "your-host.com",
         "credentialScope": "eu/your-service/ems_request",
         "key": "some-key",
-        "secret": "some-secret"
+        "secret": "some-secret",
+        "algoPrefix": "some-algo-prefix",
+        "vendorKey": "some-vendor-key",
+        "authHeaderName": "X-Some-Authorization",
+        "dateHeaderName": "X-Some-Date"
       },
       {
         "host": "your-other-host.com",
         "credentialScope": "eu/your-other-service/ems_request",
         "key": "other-key",
-        "secret": "other-secret"
+        "secret": "other-secret",
+        "algoPrefix": "other-algo-prefix",
+        "vendorKey": "other-vendor-key",
+        "authHeaderName": "X-Other-Authorization",
+        "dateHeaderName": "X-Other-Date"
       }
   ]
 }
